@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Clone</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Custom CSS */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+    }
+    .profile-pic {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .story-pic {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .menu-icons {
+      font-size: 24px;
+    }
+    .story {
+      display: inline-block;
+      margin-right: 12px;
+    }
+    /* Style for the post content */
+    .post-content {
+      border: 1px solid #e6e6e6;
+      border-radius: 3px;
+      background-color: #fff;
+      margin-top: 20px;
+      padding: 16px;
+    }
+    .post-content p {
+      margin-bottom: 10px;
+    }
+    .post-content button {
+      color: #262626;
+      margin-right: 10px;
+    }
+    .post-content button:hover {
+      text-decoration: underline;
+    }
+    /* Style for the suggested profile */
+    .suggested-profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .suggested-profile img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .suggested-profile span {
+      font-weight: bold;
+      color: #262626;
+    }
+    /* Style for the bottom navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border-top: 1px solid #e6e6e6;
+      padding: auto;
+    }
+    .bottom-nav-item {
+      color: #262626;
+      text-align: center;
+      padding: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="row bg-light border-bottom py-2">
+      <div class="col-md-3 text-center">
+        <!-- Instagram Logo -->
+        <img src="instagram-logo.png" alt="Instagram Logo" height="29">
+      </div>
+      <div class="col-md-6 text-center">
+        <!-- Search Bar -->
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <div class="col-md-3 text-right">
+        <!-- Profile Picture and Switch Button -->
+        <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic mr-2">
+        <button class="btn btn-link">Switch</button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="row mt-4">
+      <!-- Stories -->
+      <div class="col-md-3">
+        <ul class="list-unstyled">
+          <li class="story"><img src="story1.jpg" alt="Story 1" class="story-pic"></li>
+          <!-- Add more story items here -->
+        </ul>
+      </div>
+      <!-- Post -->
+      <div class="col-md-6">
+        <!-- Post Image -->
+        <img src="post-image.jpg" alt="Post Image" class="img-fluid">
+        <!-- Post Content -->
+        <div class="post-content">
+          <!-- Post Details -->
+          <p><strong>artistpandit</strong> - 1d</p>
+          <!-- Post Caption -->
+          <p>This is a beautiful painting of an elderly man. #art #painting</p>
+          <!-- Like and Comment Buttons -->
+          <button class="btn btn-link"><i class="far fa-heart"></i> Like</button>
+          <button class="btn btn-link"><i class="far fa-comment"></i> Comment</button>
+          <button class="btn btn-link"><i class="far fa-paper-plane"></i> Share</button>
+        </div>
+      </div>
+      <!-- Suggested Profiles -->
+      <div class="col-md-3">
+        <h5>Suggested for you</h5>
+        <div class="suggested-profile">
+          <!-- Profile Picture -->
+          <img src="profile-pic1.jpg" alt="Profile Picture 1">
+          <!-- Username -->
+          <span>niranjan_desai_11</span>
+        </div>
+        <!-- Add more suggested profiles here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav bg-light">
+    <div class="row">
+      <div class="col-3 bottom-nav-item">
+        <!-- Home -->
+        <i class="fas fa-home menu-icons"></i>
+      </div>
+      <div class="col-3 bottom-nav-item">
+        <!-- Search -->
+        <i class="fas fa-search menu-icons"></i>
+      </div>
+      <div class="col-3 bottom-nav-item">
+        <!-- Plus -->
+        <i class="fas fa-plus-circle menu-icons"></i>
+      </div>
+      <div class="col-3 bottom-nav-item">
+        <!-- Heart -->
+        <i class="far fa-heart menu-icons"></i>
+      </div>
+      <div class="col-3 bottom-nav-item">
+        <!-- Profile -->
+        <i class="far fa-user menu-icons"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
