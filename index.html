@@ -1129,21 +1129,20 @@
       submitBtn.textContent = 'Sending...';
 
       // Get form data
-const formData = {
-  name: document.getElementById('name').value,
-  email: document.getElementById('email').value,
-  severity: document.getElementById('severity').value,
-  message: document.getElementById('message').value,
-  title: document.getElementById('severity').value
-};
+      const formData = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        severity: document.getElementById('severity').value,
+        message: document.getElementById('message').value.trim()
+      };
 
       try {
         // Send email using EmailJS
         const response = await emailjs.send(
-  'service_w5uo85v',
-  'SvuiPBiNvZCRWoIoc',   // ← confirm this matches your dashboard
-  formData
-);
+          'service_w5uo85v',
+          'template_yu91j3s',
+          formData
+        );
 
         if (response.status === 200) {
           successMsg.classList.add('show');
