@@ -1,0 +1,1186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <title>NVD | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='200' height='200'%3E%3Crect x='10' y='10' width='180' height='180' rx='28' fill='none' stroke='%2314b8a6' stroke-width='6'/%3E%3Ctext x='100' y='128' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='68' font-weight='700' fill='%2314b8a6' letter-spacing='1'%3ENVD%3C/text%3E%3C/svg%3E">
+</head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niranjan Desai | QA Engineer Portfolio</title>
+  <meta name="description" content="QA Engineer specializing in Selenium automation, TestNG, Cucumber BDD, and JMeter performance testing. Based in Pune, India." />
+  <meta property="og:title" content="Niranjan Desai | QA Engineer Portfolio" />
+  <meta property="og:description" content="Dark cinematic QA portfolio with bug-hunter energy, automation showcases, and test-run storytelling." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    :root {
+      --bg: #0A0E1A;
+      --panel: #0F1629;
+      --panel-2: rgba(10, 14, 26, 0.82);
+      --line: rgba(0, 255, 136, 0.18);
+      --green: #00FF88;
+      --green-2: #6dffd1;
+      --text: #E8EDF5;
+      --muted: #aeb8cb;
+      --red: #FF2D55;
+      --gold: #FFD60A;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+      --border: #1E2D4A;
+      --surface: rgba(15,22,41,0.92);
+    }
+    body.light {
+      --bg: #F8FAFC;
+      --panel: #FFFFFF;
+      --panel-2: rgba(255,255,255,0.92);
+      --line: rgba(0, 145, 75, 0.14);
+      --green: #00A85A;
+      --green-2: #007C45;
+      --text: #0F172A;
+      --muted: #475569;
+      --red: #E11D48;
+      --gold: #B45309;
+      --border: #DDE6F1;
+      --surface: rgba(255,255,255,0.94);
+      --shadow: 0 18px 40px rgba(15,23,42,0.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html { background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(0,255,136,0.06), transparent 18%),
+        linear-gradient(180deg, #030712 0%, var(--bg) 45%, #040813 100%);
+      overflow-x: hidden;
+      cursor: default;
+      transition: background .3s ease, color .3s ease;
+    }
+    body.light { background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 45%, #E5EEF6 100%); }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.15));
+      pointer-events: none;
+      z-index: -2;
+    }
+    ::selection { background: rgba(0,255,136,0.18); color: #fff; }
+    ::-webkit-scrollbar { width: 0; height: 0; }
+    html { scrollbar-width: none; }
+    body { -ms-overflow-style: none; }
+
+    #bg-canvas { position: fixed; inset: 0; z-index: -1; opacity: .95; }
+    .noise { position: fixed; inset: 0; background-image: radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px); background-size: 16px 16px; opacity: .08; z-index: -1; pointer-events: none; }
+
+    .loading-screen {
+      position: fixed; inset: 0; background: #030611; display: grid; place-items: center; z-index: 9999;
+      transition: opacity .8s ease, visibility .8s ease;
+    }
+    .loading-screen.hidden { opacity: 0; visibility: hidden; }
+    .boot-card {
+      width: min(92vw, 640px); padding: 24px; border: 1px solid rgba(0,255,136,0.16); border-radius: 18px;
+      background: linear-gradient(145deg, rgba(7, 11, 20, .96), rgba(5, 9, 18, .98)); box-shadow: var(--shadow), 0 0 0 1px rgba(0,255,136,.05) inset;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--green-2);
+    }
+    .boot-card .label { color: var(--muted); letter-spacing: .22em; text-transform: uppercase; font-size: .72rem; margin-bottom: 10px; }
+    .boot-line { min-height: 1.4rem; margin: 8px 0; white-space: nowrap; overflow: hidden; }
+    .boot-line::after { content: '▌'; color: var(--green); animation: blink .95s steps(2,start) infinite; }
+    .boot-line.done::after { content: '';
+    }
+
+    .topbar {
+      position: fixed; top: 18px; left: 0; right: 0; z-index: 900; padding: 0 18px; transition: all .35s ease;
+      background: transparent; border-bottom: 1px solid transparent;
+    }
+    .topbar.scrolled { top: 0; }
+    .ambient-layer, .orbital-layer, .live-bg-rings { position: fixed; inset: 0; pointer-events: none; z-index: -2; overflow: hidden; }
+    .ambient-layer::before, .ambient-layer::after, .orbital-layer::before, .orbital-layer::after {
+      content: ''; position: absolute; border-radius: 50%; filter: blur(28px); opacity: .28; mix-blend-mode: screen;
+      animation: drift 16s linear infinite alternate, pulse 6s ease-in-out infinite;
+    }
+    .ambient-layer::before { width: 220px; height: 220px; left: 8%; top: 18%; background: rgba(0,255,136,.18); }
+    .ambient-layer::after { width: 300px; height: 300px; right: 8%; bottom: 10%; background: rgba(122,162,255,.18); animation-duration: 18s; }
+    .orbital-layer::before { width: 360px; height: 360px; left: 45%; top: 10%; border: 1px solid rgba(0,255,136,.18); animation: orbit 22s linear infinite; }
+    .orbital-layer::after { width: 180px; height: 180px; right: 22%; top: 24%; border: 1px dashed rgba(255,255,255,.1); animation: orbitBack 16s linear infinite reverse; }
+    .grid-haze { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.08)); z-index: -1; pointer-events: none; }
+    .live-bg-rings span {
+      position: absolute; display: block; border-radius: 999px; border: 1px solid rgba(0,255,136,.16);
+      background: radial-gradient(circle, rgba(0,255,136,.10), rgba(0,255,255,.04) 38%, transparent 72%);
+      filter: blur(4px); opacity: .65; animation: driftFloat 18s ease-in-out infinite alternate;
+    }
+    .live-bg-rings span:nth-child(1) { width: 180px; height: 180px; left: 6%; top: 8%; animation-duration: 16s; }
+    .live-bg-rings span:nth-child(2) { width: 220px; height: 220px; right: 8%; top: 12%; animation-duration: 20s; }
+    .live-bg-rings span:nth-child(3) { width: 150px; height: 150px; left: 40%; bottom: 12%; animation-duration: 14s; }
+    .live-bg-rings span:nth-child(4) { width: 110px; height: 110px; right: 32%; bottom: 18%; animation-duration: 12s; }
+    .live-bg-rings span:nth-child(5) { width: 90px; height: 90px; left: 18%; bottom: 28%; animation-duration: 17s; }
+    .live-bg-rings span:nth-child(6) { width: 130px; height: 130px; right: 18%; bottom: 32%; animation-duration: 19s; }
+    .topbar.scrolled {
+      background: rgba(3, 7, 14, .88); border-bottom: 1px solid rgba(0,255,136,.12); backdrop-filter: blur(12px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.3);
+    }
+    .nav-wrap { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 14px; border:1px solid rgba(255,255,255,.06); border-radius: 18px; padding: 10px 12px; background: rgba(7,11,20,.78); backdrop-filter: blur(12px); box-shadow: var(--shadow); }
+    body.light .nav-wrap { background: rgba(255,255,255,.86); }
+    .brand {
+      display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text); text-decoration: none; user-select: none;
+    }
+    .brand .logo { width: 38px; height: 38px; border-radius: 10px; border: 1px solid rgba(0,255,136,.35); display: grid; place-items: center; background: rgba(0,255,136,.08); color: var(--green); box-shadow: 0 0 0 1px rgba(0,255,136,.05) inset; transition: transform .15s ease; }
+    .brand:hover .logo { animation: glitchLogo .5s linear; }
+    .nav-links { display: flex; gap: 8px; align-items: center; }
+    .nav-links a {
+      text-decoration: none; color: var(--text); font-size: .95rem; padding: 10px 12px; border-radius: 10px; position: relative; font-family: 'JetBrains Mono', monospace;
+      transition: color .2s ease, background .2s ease, transform .2s ease;
+    }
+    .nav-links a:hover { color: var(--green); background: rgba(0,255,136,.06); transform: translateY(-1px); }
+    .nav-links a.active { color: var(--green); box-shadow: 0 0 0 1px rgba(0,255,136,.15) inset; background: rgba(0,255,136,.08); }
+    .nav-links a.active::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 6px; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); border-radius: 999px; }
+    .menu-btn, .mode-btn, .mini-btn, .fab-btn { min-height: 44px; min-width: 44px; }
+    .menu-btn { display: none; border: 1px solid rgba(0,255,136,.2); background: rgba(0,255,136,.06); color: var(--text); width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; font-size: 1rem; }
+    .nav-actions { display:flex; align-items:center; gap:8px; }
+    .status-pill { display:flex; align-items:center; gap:8px; border:1px solid rgba(0,255,136,.16); background: rgba(0,255,136,.06); border-radius:999px; padding:8px 10px; font-family:'JetBrains Mono', monospace; font-size:.82rem; color:var(--text); }
+    .status-dot { width:9px; height:9px; border-radius:50%; background:#22c55e; box-shadow:0 0 0 0 rgba(34,197,94,.35); animation:pulseDot 1.8s infinite; }
+    .status-pill.offline .status-dot { background:#f87171; box-shadow:0 0 0 0 rgba(248,113,113,.35); }
+    .mode-btn { border:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); color: var(--text); width:44px; height:44px; border-radius:12px; display:grid; place-items:center; }
+    .mode-btn:hover { border-color: rgba(0,255,136,.25); color: var(--green); }
+    .mobile-nav { position: fixed; inset: 0; background: rgba(2,4,10,.98); display: none; flex-direction: column; justify-content: center; align-items: center; gap: 12px; z-index: 980; }
+    .mobile-nav a { text-decoration: none; color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 1.15rem; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.03); width: 84vw; text-align: center; }
+    .mobile-nav .close { position: absolute; top: 18px; right: 18px; background: none; border: 1px solid rgba(255,255,255,.08); color: var(--text); width: 40px; height: 40px; border-radius: 10px; }
+
+    .section { max-width: 1200px; margin: 0 auto; padding: 90px 18px 18px; min-height: auto; display: flex; align-items: flex-start; }
+    .hero { padding-top: 110px; min-height: 100vh; }
+    main { width: 100%; overflow-x: clip; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; color: var(--green); text-transform: uppercase; letter-spacing: .22em; font-size: .82rem; font-family: 'JetBrains Mono', monospace;
+      border: 1px solid rgba(0,255,136,.18); background: rgba(0,255,136,.05); padding: 10px 12px; border-radius: 999px;
+    }
+    .eyebrow::before { content: '[ '; color: var(--green); animation: blink 1.1s infinite; }
+    .eyebrow::after { content: ' ]'; color: var(--green); animation: blink 1.1s infinite; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 5.8rem); line-height: 1.02; margin: 14px 0 14px; font-weight: 800; }
+    .hero .name-line { display: inline-block; position: relative; }
+    .hero .name-line .glitch { position: absolute; inset: 0; color: var(--green); opacity: 0; text-shadow: 0 0 8px rgba(0,255,136,.25); animation: scramble 2.6s infinite; }
+    .hero p { color: var(--muted); font-size: 1.08rem; line-height: 1.7; max-width: 560px; overflow-wrap: anywhere; word-break: break-word; }
+    .section-sub, .mini-card, .stat-card, .detail-card, .bio p, .ticket-face p { overflow-wrap: anywhere; word-break: break-word; }
+    .terminal-box {
+      margin-top: 18px; border: 1px solid rgba(0,255,136,.18); border-radius: 16px; background: linear-gradient(145deg, rgba(7, 12, 22, .95), rgba(5, 9, 18, .98));
+      box-shadow: var(--shadow); padding: 12px 14px; font-family: 'JetBrains Mono', monospace; color: var(--green-2);
+    }
+    .terminal-box .line { min-height: 1.2rem; color: var(--green-2); }
+    .cta-row { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; border-radius: 12px; padding: 12px 16px;
+      font-weight: 700; border: 1px solid rgba(0,255,136,.18); background: linear-gradient(135deg, rgba(0,255,136,.08), rgba(0,255,136,.12));
+      color: var(--text); box-shadow: var(--shadow); transition: transform .18s ease, filter .18s ease, border-color .18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(0,255,136,.35); filter: drop-shadow(0 0 12px rgba(0,255,136,.18)); }
+    .btn.secondary { background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.04)); }
+    .badge-box {
+      position: absolute; right: 18px; bottom: 14px; padding: 10px 12px; border-radius: 14px; border: 1px solid rgba(0,255,136,.22);
+      background: rgba(0,255,136,.08); color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: .92rem; box-shadow: 0 0 0 1px rgba(0,255,136,.08) inset;
+      animation: pulse 1.7s infinite;
+    }
+    .bug-console { position: fixed; right: 18px; top: 120px; width: 280px; z-index: 850; display: none; border:1px solid rgba(0,255,136,.16); border-radius:18px; background: rgba(7,11,20,.95); box-shadow: var(--shadow); padding: 12px; font-family:'JetBrains Mono', monospace; }
+    .bug-console.show { display:block; }
+    .bug-console .head { display:flex; align-items:center; justify-content:space-between; gap:8px; color:var(--green); font-size:.88rem; margin-bottom:8px; }
+    .bug-console .close-console { border:1px solid rgba(255,255,255,.08); background:transparent; color:var(--text); border-radius:10px; width:32px; height:32px; }
+    .bug-line { border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:8px; margin-bottom:8px; background: rgba(255,255,255,.03); font-size:.78rem; line-height:1.35; color:var(--muted); animation: floatIn .45s ease; }
+    .bug-line strong { color: var(--green); display:block; margin-bottom:2px; }
+
+    .hero-side {
+      border: 1px solid rgba(0,255,136,.15); border-radius: 28px; padding: 18px; background: linear-gradient(145deg, rgba(8, 12, 22, .9), rgba(5, 8, 16, .98)); box-shadow: var(--shadow); min-height: 420px; position: relative; overflow: hidden;
+    }
+    body.light .hero-side, body.light .glass, body.light .badge-card, body.light .ticket-face, body.light .form-card, body.light .info-card, body.light .skill-card, body.light .honey-card { background: rgba(255,255,255,.95); color: var(--text); }
+    .mini-console { font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: .95rem; line-height: 1.45; }
+    .mini-console span { color: var(--green); }
+    .mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px; }
+    .mini-card { border: 1px solid rgba(255,255,255,.06); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.02); }
+    .mini-card strong { display: block; color: var(--green); font-size: .93rem; margin-bottom: 4px; }
+
+    .glass { border: 1px solid rgba(255,255,255,.08); border-radius: 26px; background: linear-gradient(145deg, rgba(8, 12, 22, .86), rgba(6, 10, 18, .96)); box-shadow: var(--shadow); }
+    .section-title { font-family: 'JetBrains Mono', monospace; font-size: clamp(1.35rem, 4vw, 2.1rem); color: var(--green); margin-bottom: 8px; }
+    .section-sub { color: var(--muted); max-width: 720px; line-height: 1.8; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .heading-glitch { animation: none; }
+    .heading-glitch.play { animation: glitchFlicker .8s ease 1; }
+
+    .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 22px; align-items: start; width: 100%; min-width: 0; }
+    .section, .hero-grid, .skills-grid, .project-grid, .contact-grid, .about-grid, .mini-grid, .stat-card, .detail-card, .ticket-face, .skill-card, .honey-card, .form-card, .info-card { min-width: 0; }
+    .avatar-card, .bio { min-width: 0; }
+    .avatar-card { text-align: center; padding: 18px; }
+    .avatar-wrap { position: relative; width: 170px; height: 170px; margin: 0 auto 14px; display: grid; place-items: center; }
+    .avatar-ring, .avatar-ring-2 { position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(0,255,136,.5); animation: spin 10s linear infinite; }
+    .avatar-ring-2 { inset: 8px; border-color: rgba(0,255,136,.2); animation-direction: reverse; animation-duration: 6s; }
+    .avatar-core { width: 128px; height: 128px; border-radius: 50%; border: 2px solid rgba(0,255,136,.35); background: radial-gradient(circle at 30% 30%, rgba(0,255,136,.15), rgba(4,8,14,.95)); box-shadow: 0 0 30px rgba(0,255,136,.16), inset 0 0 22px rgba(0,255,136,.05); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 2rem; color: var(--green); }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+    .stat-card { border: 1px solid rgba(0,255,255,.08); border-radius: 18px; padding: 12px; background: rgba(255,255,255,.026); }
+    .stat-card strong { display: block; font-size: 1.35rem; color: var(--green); font-family: 'JetBrains Mono', monospace; }
+    .stat-card span { color: var(--muted); font-size: .92rem; }
+    .bio p { color: var(--muted); line-height: 1.85; margin-top: 0; }
+    .about-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+    .detail-card { border: 1px solid rgba(0,255,136,.14); border-radius: 18px; padding: 12px; background: rgba(255,255,255,.03); }
+    .detail-card h4 { margin: 0 0 6px; color: var(--green-2); font-family: 'JetBrains Mono', monospace; font-size: .95rem; text-transform: uppercase; letter-spacing: .08em; }
+    .detail-card p, .detail-card li { color: var(--muted); font-size: .95rem; line-height: 1.6; }
+    .detail-card ul { margin: 0; padding-left: 16px; }
+    .ticker {
+      margin-top: 12px; border: 1px solid rgba(0,255,136,.15); background: rgba(0,255,255,.02); border-radius: 14px; overflow: hidden; padding: 10px 0;
+      font-family: 'JetBrains Mono', monospace; color: var(--green); text-transform: uppercase; letter-spacing: .12em; font-size: .92rem;
+    }
+    .ticker-track { display: inline-block; white-space: nowrap; padding-left: 100%; animation: marquee 18s linear infinite; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
+    .skill-card, .honey-card { padding: 16px; }
+    .skill-item { margin-bottom: 12px; }
+    .skill-label { display: flex; justify-content: space-between; color: var(--text); font-size: .98rem; margin-bottom: 6px; }
+    .bar { height: 10px; border-radius: 999px; background: rgba(255,255,255,.06); overflow: hidden; border: 1px solid rgba(0,255,255,.06); }
+    .bar > i { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--green), #7dffc9); border-radius: inherit; transition: width 1s cubic-bezier(.22,.61,.36,1); }
+    .hex-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .hex { border-radius: 18px; border: 1px solid rgba(0,255,136,.18); background: linear-gradient(145deg, rgba(0,255,136,.06), rgba(255,255,255,.02)); padding: 14px; min-height: 86px; display: grid; place-items: center; text-align: center; color: var(--text); font-weight: 600; position: relative; overflow: hidden; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    .hex::before { content: ''; position: absolute; inset: 0; background: linear-gradient(130deg, transparent 0 30%, rgba(0,255,136,.18) 50%, transparent 70%); transform: translateX(-140%); transition: transform .6s ease; }
+    .hex:hover { transform: translateY(-4px) scale(1.02); border-color: rgba(0,255,136,.4); box-shadow: 0 0 22px rgba(0,255,136,.16); }
+    .hex:hover::before { transform: translateX(140%); }
+    .tool-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .pill { border: 1px solid rgba(0,255,136,.18); background: rgba(255,255,255,.03); color: var(--text); border-radius: 999px; padding: 8px 10px; font-size: .92rem; font-family: 'JetBrains Mono', monospace; }
+    .process-grid { display:grid; grid-template-columns: repeat(6, 1fr); gap:10px; margin-top:14px; }
+    .phase-card { border:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); border-radius:18px; padding:10px; cursor:pointer; transition: transform .18s ease, border-color .18s ease, background .2s ease; }
+    .phase-card.active { border-color: rgba(0,255,136,.35); background: rgba(0,255,136,.08); transform: translateY(-2px); }
+    .phase-card small { display:block; color: var(--green); font-family:'JetBrains Mono', monospace; font-size:.78rem; margin-bottom:4px; }
+    .phase-card strong { display:block; font-size:.98rem; }
+    .phase-note { margin-top:10px; border:1px dashed rgba(0,255,136,.18); border-radius:14px; background: rgba(255,255,255,.03); color: var(--muted); padding:10px; font-size:.95rem; line-height:1.6; }
+    .fab-wrap { position: fixed; right: 14px; bottom: 68px; display:flex; flex-direction:column; gap:8px; z-index:900; }
+    .fab-btn { display:grid; place-items:center; width:56px; height:56px; border-radius:50%; border:1px solid rgba(0,255,136,.18); background: linear-gradient(145deg, rgba(0,255,136,.12), rgba(5,9,16,.95)); color: var(--text); box-shadow: var(--shadow); text-decoration:none; font-size:1.15rem; position:relative; }
+    .fab-btn::after { content: attr(data-tip); position:absolute; right:64px; top:50%; transform:translateY(-50%); white-space:nowrap; background: rgba(3,7,14,.97); border:1px solid rgba(0,255,136,.18); color: var(--text); border-radius:10px; padding:6px 8px; font-size:.8rem; opacity:0; pointer-events:none; transition:opacity .18s ease; }
+    .fab-btn:hover::after { opacity:1; }
+    .scroll-top { bottom: 14px; }
+    .floating-note { position:fixed; right:18px; bottom:132px; z-index:890; font-size:.82rem; color:var(--muted); font-family:'JetBrains Mono', monospace; }
+
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; align-items: stretch; }
+    .arsenal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .arsenal-card { border-radius: 22px; padding: 16px; border: 1px solid rgba(0,255,136,.14); background: linear-gradient(145deg, rgba(7,12,20,.94), rgba(6,9,17,.98)); box-shadow: var(--shadow); min-height: 100%; }
+    .arsenal-label { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(0,255,136,.08); color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: .9rem; margin-bottom: 8px; }
+    .arsenal-card h3 { margin: 0 0 6px; color: var(--text); font-size: 1.02rem; }
+    .arsenal-card p { color: var(--muted); line-height: 1.55; font-size: .95rem; margin: 0 0 10px; }
+    .arsenal-card ul { margin: 0; padding-left: 16px; color: var(--muted); line-height: 1.45; font-size: .92rem; }
+    .ticket-wrap { perspective: 1200px; height: 100%; }
+    .ticket-card { position: relative; width: 100%; min-height: 300px; height: 100%; transform-style: preserve-3d; transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+    .ticket-wrap:hover .ticket-card { transform: rotateY(180deg) translateY(-4px); }
+    .ticket-face { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; backface-visibility: hidden; border-radius: 24px; padding: 16px; border: 1px solid rgba(0,255,136,.16); background: linear-gradient(145deg, rgba(7, 12, 20, .94), rgba(6, 9, 17, .98)); box-shadow: var(--shadow); overflow: hidden; }
+    .ticket-back { transform: rotateY(180deg); }
+    .ticket-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; color: var(--muted); font-size: .92rem; }
+    .status { color: var(--green); border: 1px solid rgba(0,255,136,.18); background: rgba(0,255,136,.08); padding: 6px 8px; border-radius: 999px; font-size: .8rem; }
+    .ticket-title { margin: 8px 0 8px; font-size: 1.18rem; color: var(--text); font-weight: 800; }
+    .techs { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+    .tech { border-radius: 999px; padding: 6px 8px; font-size: .8rem; border: 1px solid rgba(255,255,255,.08); color: var(--green-2); background: rgba(255,255,255,.05); font-family: 'JetBrains Mono', monospace; }
+    .ticket-face p { color: var(--muted); line-height: 1.55; font-size: .95rem; }
+    .mini-btn { margin-top: 10px; display: inline-flex; align-items: center; justify-content: center; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(0,255,136,.18); color: var(--text); background: rgba(0,255,255,.03); font-family: 'JetBrains Mono', monospace; text-decoration: none; }
+
+    .timeline { position: relative; padding-left: 18px; border-left: 1px solid rgba(0,255,136,.18); margin-top: 14px; }
+    .timeline-item { position: relative; margin-bottom: 16px; padding-left: 16px; }
+    .timeline-item::before { content: ''; position: absolute; left: -24px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(0,255,136,.08); }
+    .log-line { font-family: 'JetBrains Mono', monospace; color: var(--text); margin-bottom: 8px; }
+    .log-line.pass { color: var(--green); }
+    .log-line.info { color: #cce7ff; }
+    .progress-wrap { margin-top: 8px; border: 1px solid rgba(255,255,255,.08); border-radius: 12px; overflow: hidden; background: rgba(255,255,255,.03); }
+    .progress-bar { width: 0; height: 8px; background: linear-gradient(90deg, var(--green), #7dffc9); border-radius: 999px; transition: width .9s ease; }
+
+    .achieve-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .badge-card { position: relative; overflow: hidden; padding: 16px; border-radius: 20px; border: 1px solid rgba(255, 211, 107, .18); background: linear-gradient(145deg, rgba(14, 12, 10, .94), rgba(9, 8, 12, .98)); box-shadow: var(--shadow); transition: transform .18s ease; }
+    .badge-card:hover { transform: translateY(-4px); }
+    .badge-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 0 30%, rgba(255,255,255,.08) 45%, transparent 60%); transform: translateX(-150%); transition: transform .75s ease; }
+    .badge-card:hover::after { transform: translateX(150%); }
+    .badge-icon { font-size: 1.1rem; color: var(--gold); }
+    .badge-title { font-size: 1.03rem; font-weight: 700; color: #fff6da; margin-top: 6px; }
+    .badge-sub { color: var(--muted); font-size: .94rem; margin-top: 6px; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr .95fr; gap: 18px; align-items: start; }
+    .form-card, .info-card { padding: 16px; }
+    .field { display: grid; gap: 6px; margin-bottom: 10px; }
+    .field label { color: var(--green-2); font-family: 'JetBrains Mono', monospace; font-size: .95rem; }
+    .field input, .field select, .field textarea { width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.04); color: var(--text); padding: 10px 12px; font: inherit; }
+    .field textarea { min-height: 108px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: rgba(0,255,136,.32); box-shadow: 0 0 0 4px rgba(0,255,136,.08); }
+    .submit-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .success { display: none; color: var(--green); font-family: 'JetBrains Mono', monospace; font-size: .95rem; }
+    .success.show { display: block; }
+    .error { display: none; color: var(--red); font-family: 'JetBrains Mono', monospace; font-size: .95rem; }
+    .error.show { display: block; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; pointer-events: none; }
+    .terminal-info { margin-top: 10px; font-family: 'JetBrains Mono', monospace; color: var(--green-2); line-height: 1.6; background: rgba(255,255,255,.02); border-radius: 12px; padding: 10px; border: 1px solid rgba(255,255,255,.06); }
+    .socials { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .social-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; border: 1px solid rgba(0,255,136,.18); background: rgba(255,255,255,.03); color: var(--text); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: .95rem; }
+    .social-btn svg { width: 18px; height: 18px; fill: currentColor; }
+    .social-btn:hover { color: var(--green); box-shadow: 0 0 18px rgba(0,255,136,.12); }
+    .social-btn::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(6px); background: rgba(3,7,14,.98); border: 1px solid rgba(0,255,136,.18); color: var(--text); padding: 6px 8px; border-radius: 10px; white-space: nowrap; font-size: .78rem; opacity: 0; pointer-events: none; transition: all .18s ease; }
+    .social-btn:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    footer { max-width: 1200px; margin: 0 auto; padding: 18px 18px 34px; text-align: center; color: var(--muted); font-size: .95rem; }
+    footer .small { color: #8c97ad; font-size: .88rem; }
+
+    @media (max-width: 1280px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-side { min-height: auto; }
+      .project-grid { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 1440px) {
+      .section { padding: 100px 18px 18px; }
+      .hero { padding-top: 120px; }
+      .hero h1 { font-size: clamp(3.2rem, 7vw, 6rem); }
+      .project-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+      .arsenal-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(6, 1fr); }
+    }
+    @media (max-width: 1200px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-details { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 1080px) {
+      .contact-grid, .skills-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+      .arsenal-grid { grid-template-columns: 1fr 1fr; }
+      .hex-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tool-pills { gap: 8px; }
+      .hero h1 { font-size: clamp(2.8rem, 9vw, 4.6rem); }
+      .process-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 1024px) {
+      .section { padding: 85px 16px 18px; }
+      .hero { padding-top: 105px; }
+      .hero h1 { font-size: clamp(2.5rem, 8.5vw, 4.2rem); }
+      .project-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+      .arsenal-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: repeat(3, 1fr); }
+      .phase-card { padding: 10px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .menu-btn { display: inline-flex; }
+      .section { padding-top: 78px; }
+      .hero { min-height: auto; padding-bottom: 30px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 72px 14px 18px; }
+      .project-grid { grid-template-columns: 1fr; gap: 14px; }
+      .arsenal-grid { grid-template-columns: 1fr; gap: 12px; }
+      .arsenal-card { padding: 14px; }
+      .ticket-card { min-height: 260px; }
+      .hero { padding-top: 88px; }
+      .hero h1 { font-size: clamp(2.2rem, 12vw, 3.4rem); }
+      .hero p, .section-sub { font-size: .98rem; line-height: 1.7; }
+      .stats-grid, .achieve-grid, .about-details { grid-template-columns: 1fr; }
+      .avatar-wrap { width: 150px; height: 150px; }
+      .avatar-core { width: 116px; height: 116px; }
+      .hex-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .mini-grid { grid-template-columns: 1fr; }
+      .badge-box { position: static; margin-top: 14px; }
+      .topbar { padding: 12px 10px; }
+      .nav-wrap { gap: 10px; padding: 10px; }
+      .brand span:last-child { font-size: .95rem; }
+      .status-pill { display: none; }
+    }
+    @media (max-width: 640px) {
+      .skills-grid, .contact-grid, .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 14px; }
+      .hex-grid { grid-template-columns: 1fr; }
+      .tool-pills { gap: 6px; }
+      .pill { font-size: .78rem; padding: 7px 9px; }
+      .hero-side, .form-card, .info-card { padding: 14px; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .socials { justify-content: center; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+    }
+    @media (max-width: 425px) {
+      .section { padding: 68px 12px 16px; }
+      .hero { padding-top: 82px; }
+      .hero h1 { font-size: clamp(1.8rem, 14vw, 2.8rem); }
+      .hero p, .section-sub { font-size: .92rem; line-height: 1.65; }
+      .eyebrow { font-size: .72rem; padding: 8px 10px; }
+      .terminal-box { padding: 10px 12px; font-size: .88rem; }
+      .project-grid { grid-template-columns: 1fr; gap: 12px; }
+      .arsenal-grid { grid-template-columns: 1fr; gap: 10px; }
+      .arsenal-card p, .arsenal-card li { font-size: .88rem; }
+      .ticket-face { padding: 12px; }
+      .ticket-title { font-size: 1.02rem; }
+      .techs { gap: 6px; }
+      .tech { font-size: .75rem; padding: 5px 7px; }
+      .about-grid { grid-template-columns: 1fr; gap: 14px; }
+      .avatar-card { padding: 12px; }
+      .avatar-wrap { width: 132px; height: 132px; }
+      .avatar-core { width: 100px; height: 100px; font-size: 1.6rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .bio { padding: 12px !important; }
+      .hex-grid { grid-template-columns: 1fr; }
+      .skills-grid { gap: 14px; }
+      .tool-pills { gap: 8px; }
+      .pill { font-size: .82rem; }
+      .hero-side { min-height: auto; padding: 14px; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .phase-card { padding: 8px; }
+      .phase-card small { font-size: .7rem; }
+      .phase-card strong { font-size: .85rem; }
+      .phase-note { font-size: .85rem; }
+      .nav-wrap { padding: 8px 10px; }
+      .brand span:last-child { font-size: .85rem; }
+      .brand .logo { width: 32px; height: 32px; font-size: .85rem; }
+      .fab-wrap { right: 10px; bottom: 60px; }
+      .fab-btn { width: 48px; height: 48px; font-size: 1rem; }
+    }
+    @media (max-width: 375px) {
+      .section { padding: 64px 10px 14px; }
+      .hero { padding-top: 78px; }
+      .hero h1 { font-size: clamp(1.6rem, 15vw, 2.4rem); }
+      .hero p, .section-sub { font-size: .88rem; }
+      .eyebrow { font-size: .68rem; padding: 6px 8px; }
+      .terminal-box { padding: 8px 10px; font-size: .82rem; }
+      .mini-card { padding: 10px; }
+      .mini-card strong { font-size: .85rem; }
+      .detail-card { padding: 10px; }
+      .detail-card h4 { font-size: .85rem; }
+      .detail-card p, .detail-card li { font-size: .88rem; }
+      .ticket-face { padding: 10px; }
+      .ticket-title { font-size: .95rem; }
+      .tech { font-size: .7rem; padding: 4px 6px; }
+      .section-title { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+      .btn { padding: 10px 14px; font-size: .9rem; }
+      .process-grid { grid-template-columns: 1fr; gap: 8px; }
+      .phase-card { padding: 10px; }
+      .phase-note { font-size: .82rem; }
+      .form-card, .info-card { padding: 12px; }
+      .field input, .field select, .field textarea { padding: 8px 10px; font-size: .9rem; }
+      .social-btn { width: 40px; height: 40px; }
+      .fab-btn { width: 44px; height: 44px; }
+    }
+    @media (max-width: 320px) {
+      .section { padding: 60px 8px 12px; }
+      .hero { padding-top: 74px; }
+      .hero h1 { font-size: clamp(1.4rem, 16vw, 2rem); }
+      .hero p, .section-sub { font-size: .85rem; }
+      .eyebrow { font-size: .64rem; padding: 5px 7px; }
+      .terminal-box { padding: 6px 8px; font-size: .78rem; }
+      .mini-card { padding: 8px; }
+      .mini-card strong { font-size: .8rem; }
+      .detail-card { padding: 8px; }
+      .detail-card h4 { font-size: .8rem; }
+      .detail-card p, .detail-card li { font-size: .85rem; }
+      .ticket-face { padding: 8px; }
+      .ticket-title { font-size: .9rem; }
+      .tech { font-size: .65rem; padding: 4px 5px; }
+      .section-title { font-size: clamp(1rem, 5.5vw, 1.3rem); }
+      .btn { padding: 8px 12px; font-size: .85rem; }
+      .nav-wrap { padding: 6px 8px; }
+      .brand span:last-child { font-size: .75rem; }
+      .brand .logo { width: 28px; height: 28px; font-size: .75rem; }
+      .menu-btn { width: 38px; height: 38px; font-size: .9rem; }
+      .mobile-nav a { font-size: 1rem; padding: 10px 12px; }
+      .form-card, .info-card { padding: 10px; }
+      .field input, .field select, .field textarea { padding: 7px 9px; font-size: .85rem; }
+      .social-btn { width: 36px; height: 36px; }
+      .fab-btn { width: 40px; height: 40px; font-size: .9rem; }
+    }
+    @media (max-width: 540px) {
+      .project-grid { grid-template-columns: 1fr; gap: 12px; }
+      .arsenal-grid { grid-template-columns: 1fr; gap: 10px; }
+      .arsenal-card p, .arsenal-card li { font-size: .88rem; }
+      .ticket-face { padding: 14px; }
+      .ticket-title { font-size: 1.02rem; }
+      .techs { gap: 6px; }
+      .tech { font-size: .75rem; padding: 5px 7px; }
+      .about-grid { grid-template-columns: 1fr; gap: 14px; }
+      .avatar-card { padding: 14px; }
+      .avatar-wrap { width: 132px; height: 132px; }
+      .avatar-core { width: 100px; height: 100px; font-size: 1.6rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .bio { padding: 12px !important; }
+      .hex-grid { grid-template-columns: 1fr; }
+      .skills-grid { gap: 14px; }
+      .tool-pills { gap: 8px; }
+      .pill { font-size: .82rem; }
+      .hero-side { min-height: auto; padding: 14px; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .process-grid { grid-template-columns: repeat(3, 1fr); }
+      .phase-card { padding: 8px; }
+      .phase-card small { font-size: .72rem; }
+      .phase-card strong { font-size: .88rem; }
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes pulseDot { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,.35);} 70% { box-shadow: 0 0 0 8px rgba(34,197,94,0);} 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0);} }
+    @keyframes floatIn { from { transform: translateY(4px); opacity: 0;} to { transform: translateY(0); opacity:1;} }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(0,255,136,.12); } 50% { box-shadow: 0 0 0 8px rgba(0,255,136,.02); } }
+    @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(18px,-18px,0) scale(1.12); } }
+    @keyframes driftFloat { 0% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(18px,-14px,0) scale(1.08); } 100% { transform: translate3d(-14px,18px,0) scale(1.16); } }
+    @keyframes orbit { from { transform: rotate(0deg) translateX(0) translateY(0); } to { transform: rotate(360deg) translateX(20px) translateY(18px); } }
+    @keyframes orbitBack { from { transform: rotate(0deg) translateX(0) translateY(0); } to { transform: rotate(-360deg) translateX(-18px) translateY(10px); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-100%);} }
+    @keyframes glitchLogo { 0% { transform: translate(0,0); filter: hue-rotate(0deg);} 20% { transform: translate(-2px, 1px); filter: hue-rotate(24deg);} 40% { transform: translate(2px,-1px); filter: hue-rotate(-16deg);} 60% { transform: translate(-1px,2px);} 100% { transform: translate(0,0); filter: hue-rotate(0deg);} }
+    @keyframes glitchFlicker { 0%,20%,40%,60%,100% { transform: translate(0,0); opacity: 1; } 10% { transform: translate(-2px, 2px); } 30% { transform: translate(2px,-1px); } 50% { transform: translate(-1px, 1px); } 70% { transform: translate(2px, 0); } }
+    @keyframes scramble { 0%, 20%, 45%, 70%, 100% { opacity: 0; } 15%, 35%, 55%, 85% { opacity: .12; } }
+  </style>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="ambient-layer" aria-hidden="true"></div>
+  <div class="live-bg-rings" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="orbital-layer" aria-hidden="true"></div>
+  <div class="grid-haze" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="loading-screen" id="loadingScreen">
+    <div class="boot-card">
+      <div class="label">Terminal Boot</div>
+      <div class="boot-line" data-line="0"></div>
+      <div class="boot-line" data-line="1"></div>
+      <div class="boot-line" data-line="2"></div>
+      <div class="boot-line" data-line="3"></div>
+    </div>
+  </div>
+
+  <header class="topbar" id="topbar">
+    <nav class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Go to home"><span class="logo">ND</span> <span>Niranjan Desai</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="status-pill" id="statusToggle" type="button" aria-label="Toggle availability"><span class="status-dot"></span> <span id="statusText">Open to Opportunities</span></button>
+        <button class="mode-btn" id="modeBtn" type="button" aria-label="Toggle dark/light mode">◐</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <button class="close" id="closeMenu" aria-label="Close menu">✕</button>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <aside class="bug-console" id="bugConsole" aria-label="Live bug detector">
+    <div class="head"><span>🔴 LIVE BUG DETECTOR</span><button class="close-console" id="closeConsole" aria-label="Close bug console">×</button></div>
+    <div id="bugList"></div>
+  </aside>
+
+  <main>
+    <section class="section hero reveal" id="home">
+        <div class="hero-grid">
+        <div>
+          <div class="eyebrow" role="status">QA ENGINEER & BUG HUNTER</div>
+          <h1>
+            <span class="name-line">Niranjan Desai<span class="glitch" aria-hidden="true">Niranjan Desai</span></span>
+          </h1>
+          <p id="subtitle">I break software so your users don't have to.</p>
+          <div class="terminal-box" role="status" aria-live="polite">
+            <div class="line" id="typeLine">&gt; Running test suite............ 100% PASSED ✓</div>
+          </div>
+          <div class="cta-row">
+            <a class="btn" href="#projects" aria-label="View my projects">View My Work</a>
+            <a class="btn secondary" href="Niranjan_Desai_Resume.pdf" download aria-label="Download Niranjan Desai's resume">Download Resume</a>
+          </div>
+          <div class="badge-box" role="status" aria-label="Test pass rate">Tests Passed: 100%</div>
+          <div class="status-pill" style="position:absolute; left:18px; bottom:14px; z-index:3;" role="status" aria-live="polite"> <span class="status-dot" aria-hidden="true"></span> <span id="heroStatusText">Open to Opportunities</span></div>
+        </div>
+        <aside class="hero-side glass" aria-label="QA statistics and workflow">
+          <div class="mini-console">
+            <div><span>STATUS</span> :: QA Detective online</div>
+            <div><span>MODE</span> :: Automation + Manual + Performance</div>
+            <div><span>THREAT LEVEL</span> :: Low on bugs, high on curiosity</div>
+            <div><span>FOCUS</span> :: Reliable software, clean test coverage, happy users</div>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-card"><strong>35+</strong> end-to-end tests automated</div>
+            <div class="mini-card"><strong>90%+</strong> functional coverage target</div>
+            <div class="mini-card"><strong>50+</strong> manual cases executed</div>
+            <div class="mini-card"><strong>12</strong> defects documented</div>
+            <div class="mini-card"><strong>5+</strong> core modules tested across projects</div>
+            <div class="mini-card"><strong>100%</strong> bug-hunting energy, zero guesswork</div>
+          </div>
+          <div class="detail-card" style="margin-top:12px; border-color: rgba(0,255,136,.18); background: rgba(255,255,255,.04);">
+            <h4 style="margin-bottom:6px;">Testing workflow</h4>
+            <p style="margin:0; color: var(--muted);">Requirement analysis → test planning → manual validation → automation scripting → regression checks → defect reporting.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section reveal" id="about">
+      <div>
+        <div class="section-title heading-glitch">&lt; About Me /&gt;</div>
+        <p class="section-sub">I’m a QA Engineer (fresher) from Pune with a sharp eye for bugs and a love for clean, reliable software.</p>
+        <div class="about-grid" style="margin-top: 18px;">
+          <article class="glass avatar-card" aria-label="Profile statistics">
+            <div class="avatar-wrap" aria-hidden="true">
+              <div class="avatar-ring"></div>
+              <div class="avatar-ring-2"></div>
+              <div class="avatar-core">ND</div>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-card"><strong data-count="35" aria-label="35 test cases automated">0</strong><span>Test Cases Automated</span></div>
+              <div class="stat-card"><strong data-count="90" aria-label="90 percent functional coverage">0</strong><span>Functional Coverage</span></div>
+              <div class="stat-card"><strong data-count="50" aria-label="50 manual cases executed">0</strong><span>Manual Cases Executed</span></div>
+              <div class="stat-card"><strong data-count="12" aria-label="12 bugs documented">0</strong><span>Bugs Documented</span></div>
+            </div>
+          </article>
+          <article class="bio glass" style="padding:16px;">
+            <p>I’m a QA Engineer (fresher) from Pune with a sharp eye for bugs and a love for clean, reliable software. I specialize in Selenium WebDriver automation, TestNG frameworks, BDD with Cucumber, and load testing with JMeter. I believe every bug found before release is a user saved from frustration.</p>
+            <p>My day-to-day work combines manual exploration, structured test case writing, bug reproduction, defect reporting, and automation scripting. I enjoy turning complex business flows into reliable tests and making sure each release is stable, traceable, and user-friendly.</p>
+            <div class="about-details">
+              <div class="detail-card">
+                <h4>What I bring</h4>
+                <ul>
+                  <li>Strong defect analysis and root-cause thinking</li>
+                  <li>Hands-on experience with Selenium, TestNG, and Cucumber</li>
+                  <li>Clear bug reporting and test documentation</li>
+                </ul>
+              </div>
+              <div class="detail-card">
+                <h4>QA mindset</h4>
+                <ul>
+                  <li>Focus on user journeys, edge cases, and reliability</li>
+                  <li>Manual testing depth backed by automation discipline</li>
+                  <li>Comfortable with JMeter, Jira, GitHub, and Maven workflows</li>
+                </ul>
+              </div>
+              <div class="detail-card">
+                <h4>Current focus</h4>
+                <p>Building stronger automation coverage, improving regression confidence, and learning how to create faster, smarter QA pipelines for real-world products.</p>
+              </div>
+              <div class="detail-card">
+                <h4>Why clients like me</h4>
+                <p>I combine curiosity, discipline, and calm problem-solving — so bugs are caught earlier, releases feel safer, and teams gain confidence in what they ship.</p>
+              </div>
+            </div>
+            <div class="ticker"><div class="ticker-track">Finds bugs before your users do  •  Detail-obsessed by nature  •  90%+ coverage achiever  •  Turns chaos into test cases  •  Automation &gt; repetition</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="skills">
+      <div>
+        <div class="section-title heading-glitch">Weapons Arsenal</div>
+        <p class="section-sub">A clean overview of the tools, workflows, and testing strengths I use to keep releases stable and confident.</p>
+
+        <div class="arsenal-grid" style="margin-top: 18px;">
+          <article class="arsenal-card glass">
+            <span class="arsenal-label">01</span>
+            <h3>Automation Stack</h3>
+            <p>Selenium WebDriver, TestNG, Java, and Cucumber for structured, repeatable test execution.</p>
+            <ul>
+              <li>UI regression coverage</li>
+              <li>BDD scenario design</li>
+              <li>Reusable automation flows</li>
+            </ul>
+          </article>
+
+          <article class="arsenal-card glass">
+            <span class="arsenal-label">02</span>
+            <h3>Manual & Regression</h3>
+            <p>Clear test case design, edge-case execution, and defect reporting with Jira/TestLodge discipline.</p>
+            <ul>
+              <li>Detailed bug reports</li>
+              <li>Release regression checks</li>
+              <li>Cross-module validation</li>
+            </ul>
+          </article>
+
+          <article class="arsenal-card glass">
+            <span class="arsenal-label">03</span>
+            <h3>Performance Focus</h3>
+            <p>Load and stability testing with JMeter to measure responsiveness under real usage pressure.</p>
+            <ul>
+              <li>Concurrent user checks</li>
+              <li>Latency analysis</li>
+              <li>Scalability spotting</li>
+            </ul>
+          </article>
+
+          <article class="arsenal-card glass">
+            <span class="arsenal-label">04</span>
+            <h3>Daily QA Toolkit</h3>
+            <p>Maven, GitHub, VS Code, XAMPP, and MySQL keep the testing workflow practical and efficient.</p>
+            <ul>
+              <li>Environment setup</li>
+              <li>Version-controlled test work</li>
+              <li>Fast collaboration flow</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="tool-pills">
+          <span class="pill">Java</span><span class="pill">Selenium</span><span class="pill">TestNG</span><span class="pill">Cucumber</span><span class="pill">JMeter</span><span class="pill">Jira</span><span class="pill">Maven</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">TestLodge</span><span class="pill">XAMPP</span><span class="pill">MySQL</span><span class="pill">NetBeans</span><span class="pill">Bootstrap</span>
+        </div>
+
+        <div class="arsenal-process" style="margin-top: 16px;">
+          <div class="section-title heading-glitch" style="font-size: 1.05rem;">My Testing Process</div>
+          <p class="section-sub" style="margin-top: 6px;">A simple flow I follow from understanding the product to validating the release.</p>
+          <div class="process-grid" id="phaseFlow">
+            <article class="phase-card" data-note="I study requirements and real user flows before writing any test case."><small>01</small><strong>Requirement Analysis</strong></article>
+            <article class="phase-card" data-note="I map risks, priorities, and critical scenarios for smarter test coverage."><small>02</small><strong>Test Planning</strong></article>
+            <article class="phase-card" data-note="I create readable tests for happy paths, edge cases, and regression risk."><small>03</small><strong>Test Design</strong></article>
+            <article class="phase-card" data-note="I execute manual and automated checks and log issues with clear evidence."><small>04</small><strong>Test Execution</strong></article>
+            <article class="phase-card" data-note="I report findings in a way that helps teams fix issues quickly and confidently."><small>05</small><strong>Reporting</strong></article>
+            <article class="phase-card" data-note="I verify fixes and confirm the release is stable before it goes out."><small>06</small><strong>Closure</strong></article>
+          </div>
+          <div class="phase-note" id="phaseNote">Click a stage to see how I contribute during that part of the testing lifecycle.</div>
+        </div>
+
+        <div class="about-details" style="margin-top: 14px;">
+          <div class="detail-card"><h4>Quality focus</h4><p>Login flows, checkout journeys, regression checks, performance stability, and browser behavior.</p></div>
+          <div class="detail-card"><h4>What I optimize</h4><p>Coverage, readable test design, fast defect triage, and repeatable validation after every update.</p></div>
+          <div class="detail-card"><h4>Working style</h4><p>I prefer structured testing, honest reporting, and meaningful cases instead of repetitive ones.</p></div>
+          <div class="detail-card"><h4>Goal</h4><p>Build reliable QA habits that help teams ship with confidence and fewer surprises.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="projects">
+      <div>
+        <div class="section-title heading-glitch">Case Files</div>
+        <p class="section-sub">Each one is a bug-hunting case file — built to show impact, thinking, and test execution discipline.</p>
+        <div class="project-grid" style="margin-top: 18px;">
+          <article class="ticket-wrap" aria-label="Project: SauceDemo E-commerce Website"> <div class="ticket-card">
+            <div class="ticket-face"><div class="ticket-top"><span>#QA-001</span><span class="status">STATUS: CLOSED ✓</span></div><h3 class="ticket-title">SauceDemo E-commerce Website</h3><div class="techs"><span class="tech">Selenium</span><span class="tech">TestNG</span><span class="tech">Java</span><span class="tech">Maven</span></div><p>Automated 35+ end-to-end test cases. 90%+ functional coverage. 60% faster execution.</p><a class="mini-btn" href="#contact" aria-label="View details for SauceDemo project">View Details</a></div>
+            <div class="ticket-face ticket-back"><div class="ticket-top"><span>#QA-001</span><span class="status">STATUS: CLOSED ✓</span></div><h3 class="ticket-title">Bug Summary</h3><p>Test scope covered login flows, shopping cart operations, and full checkout. Documented 12 defects during regression cycles and cut manual execution time by ~60% through automation.</p></div></div></article>
+          <article class="ticket-wrap" aria-label="Project: AnalytIQ Learning Website"> <div class="ticket-card">
+            <div class="ticket-face"><div class="ticket-top"><span>#QA-002</span><span class="status">STATUS: CLOSED ✓</span></div><h3 class="ticket-title">AnalytIQ Learning Website</h3><div class="techs"><span class="tech">Selenium</span><span class="tech">TestNG</span><span class="tech">Cucumber</span><span class="tech">JMeter</span><span class="tech">TestLodge</span></div><p>50+ manual cases. 25+ BDD scenarios. 50 concurrent user load test.</p><a class="mini-btn" href="#contact" aria-label="View details for AnalytIQ project">View Details</a></div>
+            <div class="ticket-face ticket-back"><div class="ticket-top"><span>#QA-002</span><span class="status">STATUS: CLOSED ✓</span></div><h3 class="ticket-title">Bug Summary</h3><p>Executed 50+ manual test cases across 5 core modules via TestLodge + Jira. Built 25+ Cucumber BDD scenarios and ran JMeter load tests simulating 50 concurrent users to validate performance.</p></div></div></article>
+          <article class="ticket-wrap" aria-label="Project: Book Store Management System"> <div class="ticket-card">
+            <div class="ticket-face"><div class="ticket-top"><span>#QA-003</span><span class="status">STATUS: CLOSED ✓</span></div><h3 class="ticket-title">Book Store Management System</h3><div class="techs"><span class="tech">Java</span><span class="tech">MySQL</span><span class="tech">XAMPP</span><span class="tech">NetBeans</span></div><p>Desktop inventory app. Full data integrity validation. Edge cases across all modules.</p><a class="mini-btn" href="#contact" aria-label="View details for Book Store project">View Details</a></div>
+            <div class="ticket-face ticket-back"><div class="ticket-top"><span>#QA-003</span><span class="status">STATUS: CLOSED ✓</span></div><h3 class="ticket-title">Bug Summary</h3><p>Developed a desktop application for inventory, search, and transactions. Validated data integrity and edge cases across every module before release to ensure zero critical bugs at launch.</p></div></div></article>
+          <article class="ticket-wrap" aria-label="Project: Art Gallery Website"> <div class="ticket-card">
+            <div class="ticket-face"><div class="ticket-top"><span>#QA-004</span><span class="status">STATUS: CLOSED ✓</span></div><h3 class="ticket-title">Art Gallery Website</h3><div class="techs"><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">JavaScript</span><span class="tech">Bootstrap</span></div><p>4 browsers tested. 3 screen sizes. 8 UI bugs resolved before deployment.</p><a class="mini-btn" href="#contact" aria-label="View details for Art Gallery project">View Details</a></div>
+            <div class="ticket-face ticket-back"><div class="ticket-top"><span>#QA-004</span><span class="status">STATUS: CLOSED ✓</span></div><h3 class="ticket-title">Bug Summary</h3><p>Performed cross-browser compatibility testing across Chrome, Firefox, Safari, and Edge. Tested across 3 responsive breakpoints and identified 8 UI inconsistencies prior to go-live.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="experience">
+      <div>
+        <div class="section-title heading-glitch">Test Run Log</div>
+        <p class="section-sub">A short timeline of academic progress, internships, and the testing path that shaped my QA mindset.</p>
+        <div class="timeline" style="margin-top: 18px;">
+          <article class="timeline-item glass" style="padding:14px;">
+            <div class="log-line info">[INFO] 2024 – Present → MCA · Vishwakarma University, Pune · CGPA: 8.4</div>
+            <div class="progress-wrap"><div class="progress-bar" data-progress="84"></div></div>
+          </article>
+          <article class="timeline-item glass" style="padding:14px;">
+            <div class="log-line info">[INFO] 2020 – 2023 → B.Sc Computer Science · Sangmeshwar College, Solapur · CGPA: 8.83</div>
+            <div class="progress-wrap"><div class="progress-bar" data-progress="88"></div></div>
+          </article>
+          <article class="timeline-item glass" style="padding:14px;">
+            <div class="log-line pass">[PASS] Intern → Java Programming Intern · InternPe · Remote · 3 Months</div>
+          </article>
+          <article class="timeline-item glass" style="padding:14px;">
+            <div class="log-line info">[INFO] 2019 – 2020 → 12th HSC · DSG College, Mohol · 63.08%</div>
+          </article>
+          <article class="timeline-item glass" style="padding:14px;">
+            <div class="log-line info">[INFO] 2017 – 2018 → 10th SSC · Nagnath Vidyalaya, Mohol · 61%</div>
+          </article>
+          <article class="timeline-item glass" style="padding:14px;">
+            <div class="log-line pass">[PASS] QA Philosophy → Test early, test often, report clearly, automate what repeats</div>
+            <p style="margin:6px 0 0; color: var(--muted); font-size: .95rem; line-height: 1.65;">I believe quality is a habit, not a final checklist. My approach is to think like a user, test like a detective, and document findings in a way that helps teams fix issues quickly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="certifications">
+      <div>
+        <div class="section-title heading-glitch">Achievements Unlocked 🔓</div>
+        <p class="section-sub">A few milestones, learning badges, and proof points that reflect both technical curiosity and QA discipline.</p>
+        <div class="achieve-grid" style="margin-top: 18px;">
+          <article class="badge-card glass"><div class="badge-icon">🏅</div><div class="badge-title">Manual & Automation Testing</div><div class="badge-sub">Issued by: AnalytIQ Learning, Pune</div></article>
+          <article class="badge-card glass"><div class="badge-icon">🎨</div><div class="badge-title">UI/UX Design</div><div class="badge-sub">Issued by: Microsoft via Coursera</div></article>
+          <article class="badge-card glass"><div class="badge-icon">🧠</div><div class="badge-title">UI/UX Fundamentals</div><div class="badge-sub">Issued by: Great Learning</div></article>
+          <article class="badge-card glass"><div class="badge-icon">📝</div><div class="badge-title">Technical Writing</div><div class="badge-sub">Issued by: Sangameshwar College, Solapur</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contact">
+      <div>
+        <div class="section-title heading-glitch">File a Bug Report</div>
+        <p class="section-sub">Professional, playful, and built like a real issue tracker — because the best portfolios should feel like a live system.</p>
+        <div class="contact-grid" style="margin-top: 18px;">
+          <article class="glass form-card">
+            <form id="contactForm">
+              <div class="field"><label for="name">Reporter Name</label><input type="text" id="name" name="name" placeholder="Your full name" required /></div>
+              <div class="field"><label for="email">Reporter Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required /></div>
+              <div class="field"><label for="severity">Bug Severity</label><select id="severity" name="severity" required><option value="Low — Just saying hi 👋">Low — Just saying hi 👋</option><option value="Medium — Let's collaborate 🤝">Medium — Let's collaborate 🤝</option><option value="High — Job offer incoming 💼">High — Job offer incoming 💼</option><option value="Critical — URGENT opportunity 🚨">Critical — URGENT opportunity 🚨</option></select></div>
+              <div class="field"><label for="message">Bug Description / Message</label><textarea id="message" name="message" placeholder="Describe the issue or opportunity..." required minlength="10"></textarea></div>
+              <div class="submit-row"><button class="btn" id="submitBtn" type="submit">Submit Report 🐛</button><span class="success" id="successMsg">&gt; Bug report received. Will respond within 24 hours. [CONFIRMED ✓]</span><span class="error" id="errorMsg">&gt; Error sending report. Please try again. [FAILED ✗]</span></div>
+            </form>
+          </article>
+          <article class="glass info-card">
+            <div class="terminal-info">
+              &gt; EMAIL    :: desainiranjan120@gmail.com<br />
+              &gt; PHONE    :: 9766943979<br />
+              &gt; LOCATION :: Pune, Maharashtra, India<br />
+              &gt; STATUS   :: Open to QA Opportunities ✓
+            </div>
+            <div class="socials">
+              <a class="social-btn" href="mailto:desainiranjan120@gmail.com" data-tip="desainiranjan120@gmail.com" target="_blank" rel="noreferrer" aria-label="Email Niranjan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 2v.2l8 5.2 8-5.2V8H4z"/></svg></a>
+              <a class="social-btn" href="https://github.com/N-V-D" data-tip="GitHub: N-V-D" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 0 0 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.3-1.2-1.6-1.2-1.6-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.5 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 24 12.5 12 12 0 0 0 12 .5z"/></svg></a>
+              <a class="social-btn" href="https://www.linkedin.com/in/niranjan-desai-992281326/" data-tip="LinkedIn: Niranjan Desai" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1zM5.5 9.8h2.88V19H5.5zM10.2 9.8h2.76v1.25h.04c.38-.72 1.32-1.48 2.72-1.48 2.9 0 3.44 1.9 3.44 4.38V19h-2.88v-7.83c0-1.87-.03-4.27-2.6-4.27-2.61 0-3.01 2.04-3.01 4.14V19H10.2z"/></svg></a>
+              <a class="social-btn" href="https://wa.me/919766943979" data-tip="Message on 9766943979" target="_blank" rel="noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.68 15.17L2 22l5.02-1.3A10 10 0 1 0 12 2zm5.6 14.1a8.2 8.2 0 0 1-4.08 2.18c-.48.09-1.06.17-1.62.17a8.2 8.2 0 0 1-3.1-.6l-.36-.16-2.99.78.8-2.9-.14-.32A8.2 8.2 0 1 1 17.6 16.1zM16.1 13.8c-.2-.1-1.19-.58-1.37-.64-.18-.06-.31-.1-.45.1-.14.2-.54.64-.66.77-.12.13-.24.15-.45.05-.2-.1-.87-.32-1.63-1.02-.6-.53-1.01-1.19-1.13-1.39-.12-.2 0-.3.08-.4.08-.08.2-.2.3-.3.1-.1.13-.17.2-.28.06-.12.03-.23-.02-.32-.06-.1-.45-1.08-.62-1.47-.16-.38-.32-.33-.45-.34-.12-.01-.25-.01-.39-.01-.13 0-.35.05-.54.25-.19.2-.72.7-.72 1.71 0 1.01.74 1.98.84 2.11.1.13 1.46 2.23 3.55 3.1.5.22.89.35 1.19.45.5.15.95.13 1.31.08.4-.05 1.19-.48 1.36-.95.17-.47.17-.88.12-.96-.05-.08-.18-.13-.38-.22z"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="fab-wrap">
+    <a class="fab-btn" href="https://wa.me/919766943979" target="_blank" rel="noreferrer" data-tip="Message Niranjan on 9766943979">💬</a>
+    <a class="fab-btn scroll-top" href="#home" data-tip="Scroll to top">↑</a>
+  </div>
+  <footer>
+    <div>Niranjan Desai © 2026 — All bugs fixed. All tests passed.</div>
+    <div class="small">Built with precision. Tested with obsession.</div>
+  </footer>
+
+  <script>
+    // Loading screen with typed lines
+    const lines = [
+      '> Initializing Niranjan.portfolio...',
+      '> Loading modules: [QA] [Java] [Selenium] [Cucumber]...',
+      '> Running pre-flight checks.............. [DONE]',
+      '> All systems go. Welcome.'
+    ];
+    const bootLines = document.querySelectorAll('.boot-line');
+    const loadingScreen = document.getElementById('loadingScreen');
+    setTimeout(() => {
+      bootLines.forEach((el, i) => {
+        setTimeout(() => {
+          el.textContent = lines[i];
+          el.classList.add('done');
+        }, i * 650 + 300);
+      });
+      setTimeout(() => loadingScreen.classList.add('hidden'), 3400);
+    }, 120);
+
+    // Canvas particle network
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+      particles = Array.from({ length: Math.min(70, Math.floor(window.innerWidth / 18)) }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - .5) * .4,
+        vy: (Math.random() - .5) * .4,
+        r: Math.random() * 2 + 1
+      }));
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        ctx.beginPath(); ctx.fillStyle = 'rgba(0,255,136,0.95)'; ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+        for (let j = i + 1; j < particles.length; j++) {
+          const q = particles[j];
+          const dx = p.x - q.x, dy = p.y - q.y, dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.strokeStyle = `rgba(0,255,136,${(1 - dist / 120) * 0.18})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    resize(); draw(); window.addEventListener('resize', resize);
+
+    // Scroll nav state and active item
+    const topbar = document.getElementById('topbar');
+    const navLinks = [...document.querySelectorAll('.nav-links a, .mobile-nav a')];
+    function updateNav() {
+      topbar.classList.toggle('scrolled', window.scrollY > 80);
+      const sections = document.querySelectorAll('main section[id]');
+      let current = 'home';
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 140 && rect.bottom >= 160) current = sec.id;
+      });
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.querySelectorAll('.heading-glitch').forEach(el => el.classList.add('play'));
+          if (entry.target.id === 'about') animateCounters();
+          if (entry.target.id === 'skills') animateBars();
+          if (entry.target.id === 'experience') animateProgress();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .18 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Stats counters
+    let countersDone = false;
+    function animateCounters() {
+      if (countersDone) return;
+      countersDone = true;
+      document.querySelectorAll('.stat-card strong[data-count]').forEach(card => {
+        const target = +card.dataset.count;
+        const suffix = target === 90 ? '+' : target === 35 ? '+' : target === 50 ? '+' : '';
+        const duration = 1100;
+        const start = performance.now();
+        function run(now) {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          const value = Math.floor(target * eased);
+          card.textContent = value + (suffix || '');
+          if (p < 1) requestAnimationFrame(run);
+          else card.textContent = target + (suffix || '');
+        }
+        requestAnimationFrame(run);
+      });
+    }
+
+    // Skill bars
+    function animateBars() {
+      document.querySelectorAll('.bar i').forEach(bar => {
+        const w = bar.dataset.width || 85;
+        setTimeout(() => bar.style.width = w + '%', 150);
+      });
+    }
+
+    // Progress bars
+    function animateProgress() {
+      document.querySelectorAll('.progress-bar').forEach(bar => {
+        const val = +bar.dataset.progress;
+        setTimeout(() => bar.style.width = val + '%', 180);
+      });
+    }
+
+    // Typewriter effect for hero subtitle and terminal line
+    const subtitle = document.getElementById('subtitle');
+    const typeLine = document.getElementById('typeLine');
+    function typeText(el, text, speed = 35) {
+      el.textContent = '';
+      let i = 0;
+      function tick() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(tick, speed + Math.random() * 18);
+        }
+      }
+      tick();
+    }
+    setTimeout(() => typeText(subtitle, 'I break software so your users don\'t have to.', 28), 900);
+    setTimeout(() => typeText(typeLine, '> Running test suite............ 100% PASSED ✓', 22), 1400);
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeMenu = document.getElementById('closeMenu');
+    function openMenu() { mobileNav.style.display = 'flex'; }
+    function closeNav() { mobileNav.style.display = 'none'; }
+    menuBtn.addEventListener('click', openMenu);
+    closeMenu.addEventListener('click', closeNav);
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+    // Unique cursor trail
+    const cursorGlow = document.createElement('div');
+    cursorGlow.style.position = 'fixed'; cursorGlow.style.width = '36px'; cursorGlow.style.height = '36px'; cursorGlow.style.borderRadius = '50%';
+    cursorGlow.style.border = '1px solid rgba(0,255,136,.35)'; cursorGlow.style.background = 'radial-gradient(circle, rgba(0,255,136,.18), rgba(0,255,136,.02) 45%, transparent 70%)';
+    cursorGlow.style.pointerEvents = 'none'; cursorGlow.style.zIndex = '998'; cursorGlow.style.mixBlendMode = 'screen'; cursorGlow.style.filter = 'blur(1px)';
+    cursorGlow.style.transform = 'translate(-50%, -50%)';
+    document.body.appendChild(cursorGlow);
+
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      const dot = document.createElement('span');
+      dot.style.position = 'fixed'; dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+      dot.style.width = '10px'; dot.style.height = '10px'; dot.style.borderRadius = '50%';
+      dot.style.background = 'rgba(0,255,136,.95)'; dot.style.boxShadow = '0 0 0 2px rgba(255,255,255,.1), 0 0 14px rgba(0,255,136,.35), 0 0 32px rgba(122,162,255,.18)';
+      dot.style.pointerEvents = 'none'; dot.style.zIndex = '999'; dot.style.opacity = '1';
+      dot.style.transform = 'translate(-50%, -50%)';
+      document.body.appendChild(dot);
+      setTimeout(() => {
+        dot.style.transition = 'opacity .35s ease, transform .35s ease';
+        dot.style.opacity = '0';
+        dot.style.transform = 'translate(-50%, -50%) scale(1.8) rotate(18deg)';
+      }, 0);
+      setTimeout(() => dot.remove(), 420);
+    });
+
+    function animateCursor() {
+      cursorGlow.style.left = mouseX + 'px';
+      cursorGlow.style.top = mouseY + 'px';
+      cursorGlow.style.transform = 'translate(-50%, -50%) scale(' + (1 + Math.sin(Date.now()/160)*0.05) + ')';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Phase-flow interactions
+    const phaseCards = document.querySelectorAll('.phase-card');
+    const phaseNote = document.getElementById('phaseNote');
+    phaseCards.forEach(card => {
+      card.addEventListener('click', () => {
+        phaseCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        phaseNote.textContent = card.dataset.note;
+      });
+    });
+    phaseCards[0]?.classList.add('active');
+    phaseNote.textContent = phaseCards[0]?.dataset.note || phaseNote.textContent;
+
+    // Status toggle
+    const statusToggle = document.getElementById('statusToggle');
+    const statusText = document.getElementById('statusText');
+    const heroStatusText = document.getElementById('heroStatusText');
+    let isOnline = true;
+    if (statusToggle) {
+      statusToggle.addEventListener('click', () => {
+        isOnline = !isOnline;
+        statusToggle.classList.toggle('offline', !isOnline);
+        const text = isOnline ? 'Open to Opportunities' : 'Currently Busy';
+        if (statusText) statusText.textContent = text;
+        if (heroStatusText) heroStatusText.textContent = text;
+      });
+    }
+
+    // Light/dark mode toggle
+    const modeBtn = document.getElementById('modeBtn');
+    if (modeBtn) {
+      modeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light');
+        localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+      });
+      // Check for saved theme preference
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light');
+      }
+    }
+
+    // Bug console close
+    const closeConsole = document.getElementById('closeConsole');
+    const bugConsole = document.getElementById('bugConsole');
+    if (closeConsole && bugConsole) {
+      closeConsole.addEventListener('click', () => {
+        bugConsole.classList.remove('show');
+      });
+    }
+
+    // Initialize EmailJS
+    (function() {
+      emailjs.init('SvuiPBiNvZCRWoIoc'); // Your EmailJS public key
+    })();
+
+    // Form submit with EmailJS
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMsg = document.getElementById('successMsg');
+    const errorMsg = document.getElementById('errorMsg');
+
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Reset messages
+      successMsg.classList.remove('show');
+      errorMsg.classList.remove('show');
+
+      // Validate form
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      // Get form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        severity: document.getElementById('severity').value,
+        message: document.getElementById('message').value
+      };
+
+      try {
+        // Send email using EmailJS
+        const response = await emailjs.send(
+          'service_w5uo85v',    // Your EmailJS service ID
+          'YOUR_TEMPLATE_ID',   // Replace with your EmailJS template ID from https://www.emailjs.com/ -> Email Templates
+          formData
+        );
+
+        if (response.status === 200) {
+          successMsg.classList.add('show');
+          contactForm.reset();
+        } else {
+          throw new Error('Failed to send email');
+        }
+      } catch (error) {
+        console.error('EmailJS error:', error);
+        errorMsg.classList.add('show');
+      } finally {
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Report 🐛';
+      }
+    });
+
+    // Easter egg
+    let footerClicks = 0;
+    document.querySelector('footer').addEventListener('click', () => {
+      footerClicks++;
+      if (footerClicks === 3) {
+        alert('🎉 Hidden test case: PASSED! You found the Easter egg.');
+        // simple confetti burst
+        for (let i = 0; i < 34; i++) {
+          const c = document.createElement('span');
+          c.style.position = 'fixed'; c.style.top = '50%'; c.style.left = '50%'; c.style.width = '8px'; c.style.height = '14px';
+          c.style.borderRadius = '2px'; c.style.background = ['#00ff88', '#ffd36b', '#ff2d55'][i % 3];
+          c.style.transform = 'translate(-50%, -50%) rotate(' + (i * 10) + 'deg)';
+          c.style.pointerEvents = 'none'; c.style.zIndex = 9999;
+          document.body.appendChild(c);
+          const x = (Math.random() - .5) * 220; const y = (Math.random() - .5) * 220;
+          c.animate([{ transform: 'translate(-50%, -50%) scale(1)', opacity: 1 }, { transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0)`, opacity: 0 }], { duration: 900, easing: 'ease-out' });
+          setTimeout(() => c.remove(), 900);
+        }
+        footerClicks = 0;
+      }
+    });
+  </script>
+</body>
+</html>
