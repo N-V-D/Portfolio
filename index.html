@@ -1,10 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <title>NVD | Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='200' height='200'%3E%3Crect x='10' y='10' width='180' height='180' rx='28' fill='none' stroke='%2314b8a6' stroke-width='6'/%3E%3Ctext x='100' y='128' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='68' font-weight='700' fill='%2314b8a6' letter-spacing='1'%3ENVD%3C/text%3E%3C/svg%3E">
-</head>
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Niranjan Desai | QA Engineer Portfolio</title>
@@ -12,6 +8,7 @@
   <meta property="og:title" content="Niranjan Desai | QA Engineer Portfolio" />
   <meta property="og:description" content="Dark cinematic QA portfolio with bug-hunter energy, automation showcases, and test-run storytelling." />
   <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' width='200' height='200'%3E%3Crect x='10' y='10' width='180' height='180' rx='28' fill='none' stroke='%2314b8a6' stroke-width='6'/%3E%3Ctext x='100' y='128' text-anchor='middle' font-family='Arial, Helvetica, sans-serif' font-size='68' font-weight='700' fill='%2314b8a6' letter-spacing='1'%3ENVD%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -1111,7 +1108,8 @@
     const successMsg = document.getElementById('successMsg');
     const errorMsg = document.getElementById('errorMsg');
 
-    contactForm.addEventListener('submit', async function(e) {
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       // Reset messages
@@ -1140,7 +1138,7 @@
         // Send email using EmailJS
         const response = await emailjs.send(
           'service_w5uo85v',
-          'template_yu91j3s',
+          'template_0haed9e',
           formData
         );
 
@@ -1162,6 +1160,7 @@
         submitBtn.textContent = 'Submit Report 🐛';
       }
     });
+    }
 
     // Easter egg
     let footerClicks = 0;
